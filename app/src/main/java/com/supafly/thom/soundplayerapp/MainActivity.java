@@ -1,5 +1,6 @@
 package com.supafly.thom.soundplayerapp;
 
+import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -33,6 +34,12 @@ public class MainActivity extends ActionBarActivity {
     public void stopMusic(View view) {
         mySound.release();
         mySound  = MediaPlayer.create(this, R.raw.lionsleeptonight);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        setContentView(R.layout.activity_main);
     }
 
     @Override
